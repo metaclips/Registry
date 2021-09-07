@@ -2,3 +2,4 @@ target
 Cargo.lock
 .cargo
 cargo-http-registry
+vendor
