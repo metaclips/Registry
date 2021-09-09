@@ -14,14 +14,12 @@ git checkout topic/symlink
 
 cargo build --release
 
-git config --global user.email "notused@email.com"
-git config --global user.name "Ockam"
-
-./target/release/cargo-http-registry add/vendor/full/path/here  --addr="127.0.0.1:3333" &
+#Note: Please pass your vendor full path instead
+./target/release/cargo-http-registry /workspaces/Registry/vendor  --addr="127.0.0.1:3333" &
 
 echo "Started http registry"
 cd ../foo
-# Download all dependencies to our local
+# Download all dependencies to our local `thiserror`
 cargo local-registry --sync Cargo.lock ../vendor --no-delete >> ../.cargo/config
 echo "Retrieved dependencies from crates.io"
 
